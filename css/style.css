@@ -439,3 +439,32 @@ svg { display: block; max-width: 100%; }
   display: block;
 }
 .logo-chip.airtel img { height: 55%; }
+
+/* Illustrative Dashboard Mockup */
+.mock-panel {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.1rem 1.3rem;
+  max-width: 400px;
+}
+.light .mock-panel, .warm .mock-panel { background: #FFFFFF; border-color: var(--hairline); box-shadow: 0 8px 28px rgba(11,11,16,0.07); }
+.mock-row { display: flex; justify-content: space-between; align-items: center; padding: .55rem 0; border-bottom: 1px solid var(--card-border); font-size: .85rem; gap: 1rem; }
+.light .mock-row, .warm .mock-row { border-color: var(--hairline); }
+.mock-row:last-child { border-bottom: none; }
+.mock-row .v { font-weight: 900; color: var(--purple-light); white-space: nowrap; }
+.light .mock-row .v, .warm .mock-row .v { color: var(--purple-deep); }
+
+/* Growth Formula Box */
+.formula-box {
+  background: var(--card);
+  border: 1px solid var(--purple);
+  border-radius: 12px;
+  padding: 1.1rem 1.4rem;
+  font-size: clamp(.85rem, 1.6vw, 1.05rem);
+  font-weight: 700;
+  color: var(--purple-light);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.light .formula-box, .warm .formula-box { background: #FFFFFF; color: var(--purple-deep); box-shadow: 0 4px 16px rgba(11,11,16,0.05); }
