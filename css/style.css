@@ -1,0 +1,441 @@
+/* ============================================================
+   AIRTEL AFRICA + TRANCE AI — STRATEGIC PITCH DECK DESIGN SYSTEM
+   Theme: Trance AI Deep Royal & Electric Purple
+   Typography: Satoshi (Fontshare API)
+   ============================================================ */
+
+/* ---- Design Tokens ---- */
+:root {
+  font-size: clamp(13px, 2.2vh, 16px);
+
+  /* Color Palette */
+  --ink: #0A0A0E;              /* Base dark background */
+  --surface: #12121A;          /* Dark surface background */
+  --card: #181724;             /* Dark card background */
+  --card-border: #2B283E;      /* Dark border */
+  
+  --paper: #FAFAFD;            /* Light mode base */
+  --paper-warm: #F4F2F9;       /* Warm light mode base */
+  
+  --text: #FAF9FE;             /* Primary text (dark slides) */
+  --ink-text: #0B0B10;         /* Primary text (light slides) */
+  --muted: #747185;            /* Muted text */
+  --muted-light: #9B98AE;      /* Muted text on dark */
+  --hairline: #DCD8E8;         /* Hairline on light */
+
+  /* Purple Brand Palette */
+  --purple: #A004DF;           /* Primary Electric Purple */
+  --purple-deep: #5100A8;      /* Primary Royal Purple */
+  --purple-dark: #4000A7;      /* Dark Purple accent */
+  --purple-light: #B83BF7;     /* Light Electric Purple */
+  --purple-glow: rgba(160, 4, 223, 0.35);
+  --purple-bg: rgba(81, 0, 168, 0.12);
+
+  /* Auxiliary & Status Tokens */
+  --gold: #F59E0B;             /* Secondary highlights */
+  --teal: #2DD4BF;             /* Technology / Cloud accents */
+  --neg: #E84040;              /* Negative / Friction */
+  --success: #10B981;          /* Positive / Growth */
+
+  --maxw: 1180px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --morph-ease: cubic-bezier(.16, 1, .3, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: auto;
+  overflow: hidden;
+  height: 100%;
+  font-size: clamp(14px, 1.15vw, 22px);
+}
+
+body {
+  font-family: 'Satoshi', system-ui, -apple-system, sans-serif;
+  background: var(--ink);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* ---- Scroll-Snap Container ---- */
+.deck {
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.slide {
+  position: relative;
+  height: 100dvh;
+  min-height: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(.5rem, 2vh, 2.5rem) clamp(1.4rem, 5vw, 5rem);
+  overflow: hidden;
+}
+
+/* Background Variations */
+.slide.dark { background: var(--ink); color: var(--text); }
+.slide.light { background: var(--paper); color: var(--ink-text); }
+.slide.warm { background: var(--paper-warm); color: var(--ink-text); }
+
+.inner {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: scale(.95) translateY(18px);
+  transition: opacity 1.1s var(--morph-ease), transform 1.1s var(--morph-ease);
+}
+
+.slide.visible .inner {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Grid Texture Background ---- */
+.slide.dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(160, 4, 223, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(160, 4, 223, 0.04) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(ellipse 95% 80% at 50% 40%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 95% 80% at 50% 40%, #000 55%, transparent 100%);
+}
+
+.slide.light::before, .slide.warm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(81, 0, 168, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(81, 0, 168, 0.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(ellipse 95% 80% at 50% 40%, #000 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse 95% 80% at 50% 40%, #000 50%, transparent 100%);
+}
+
+/* ---- Typography Primitives ---- */
+.eyebrow {
+  font-size: clamp(.62rem, .8vw, .72rem);
+  font-weight: 700;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.dark .eyebrow { color: var(--muted-light); }
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--purple);
+  flex: none;
+  box-shadow: 0 0 0 0 var(--purple-glow);
+  animation: pulsePurple 2.6s var(--ease) infinite;
+}
+
+@keyframes pulsePurple {
+  0% { box-shadow: 0 0 0 0 rgba(160, 4, 223, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(160, 4, 223, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(160, 4, 223, 0); }
+}
+
+h1, h2, h3 { font-weight: 900; line-height: 1.04; letter-spacing: -.025em; }
+
+.display { font-size: clamp(1.85rem, 4.4vw, 3.4rem); font-weight: 900; line-height: 1.08; letter-spacing: -.03em; }
+.title { font-size: clamp(1.45rem, 2.9vw, 2.35rem); font-weight: 900; line-height: 1.1; letter-spacing: -.025em; }
+.subtitle { font-size: clamp(1.05rem, 1.75vw, 1.35rem); font-weight: 500; color: var(--muted); line-height: 1.45; }
+.dark .subtitle { color: var(--muted-light); }
+.lede { font-size: clamp(.95rem, 1.35vw, 1.1rem); line-height: 1.6; color: var(--muted); max-width: 62ch; }
+.dark .lede { color: var(--muted-light); }
+
+.purple { color: var(--purple); }
+.purple-gradient {
+  background: linear-gradient(135deg, var(--purple-light), var(--purple), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.tnum { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+/* ---- Cards ---- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.light .card, .warm .card {
+  background: #FFFFFF;
+  border-color: var(--hairline);
+  box-shadow: 0 1px 3px rgba(11, 11, 16, 0.04);
+}
+
+.dark .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(81, 0, 168, 0.25);
+  border-color: rgba(160, 4, 223, 0.35);
+}
+
+.light .card:hover, .warm .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(81, 0, 168, 0.08);
+  border-color: var(--purple);
+}
+
+/* ---- Reveal Cascading Animations ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal.d1 { transition-delay: .08s; }
+.slide.visible .reveal.d2 { transition-delay: .16s; }
+.slide.visible .reveal.d3 { transition-delay: .24s; }
+.slide.visible .reveal.d4 { transition-delay: .32s; }
+.slide.visible .reveal.d5 { transition-delay: .40s; }
+.slide.visible .reveal.d6 { transition-delay: .48s; }
+.slide.visible .reveal.d7 { transition-delay: .56s; }
+.slide.visible .reveal.d8 { transition-delay: .64s; }
+.slide.visible .reveal.d9 { transition-delay: .72s; }
+.slide.visible .reveal.d10 { transition-delay: .80s; }
+
+/* ---- Chrome Elements ---- */
+.chrome-foot, .chrome-page, .chrome-side {
+  position: absolute;
+  z-index: 5;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: .65;
+  pointer-events: none;
+}
+
+.dark .chrome-foot, .dark .chrome-page, .dark .chrome-side { color: var(--muted-light); opacity: .55; }
+.chrome-foot { left: clamp(1.4rem, 6vw, 3.2rem); bottom: clamp(1.2rem, 3vw, 1.8rem); display: flex; align-items: center; gap: .6rem; }
+.chrome-page { right: clamp(1.4rem, 6vw, 3.2rem); bottom: clamp(1.2rem, 3vw, 1.8rem); }
+.chrome-side { right: .5rem; bottom: clamp(1.2rem, 3vw, 1.8rem); transform: rotate(180deg); writing-mode: vertical-rl; letter-spacing: .32em; font-size: .55rem; opacity: .4; }
+.chrome-foot .fdot { width: 6px; height: 6px; border-radius: 50%; background: var(--purple); opacity: .9; }
+
+/* Progress Bar & Dots Nav */
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--purple-deep), var(--purple), var(--gold));
+  width: 0;
+  z-index: 60;
+  transition: width .15s linear;
+}
+
+#dots {
+  position: fixed;
+  right: clamp(.5rem, 1.4vw, 1rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 55;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+#dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--muted);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all .3s var(--ease);
+}
+
+#dots button.active {
+  background: var(--purple);
+  border-color: var(--purple);
+  transform: scale(1.4);
+  box-shadow: 0 0 10px var(--purple-glow);
+}
+
+#dots button:hover { border-color: var(--purple); }
+
+/* Keyboard Hint */
+.kbd-hint {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 55;
+  font-size: .6rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: .65;
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  background: rgba(18, 18, 26, 0.85);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(8px);
+}
+
+.light .kbd-hint, .warm .kbd-hint {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--hairline);
+  color: var(--ink-text);
+}
+
+/* Layout Utilities */
+.row { display: flex; gap: clamp(1rem, 2.4vw, 2.2rem); align-items: center; flex-wrap: wrap; }
+.col { display: flex; flex-direction: column; }
+.split { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(1.4rem, 4vw, 3.4rem); align-items: center; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(.8rem, 1.6vw, 1.2rem); }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(.8rem, 1.6vw, 1.2rem); }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(.7rem, 1.4vw, 1rem); }
+
+@media(max-width: 880px) {
+  .split { grid-template-columns: 1fr; gap: 1.4rem; }
+  .grid3, .grid4 { grid-template-columns: 1fr 1fr; }
+  .grid2 { grid-template-columns: 1fr; }
+}
+@media(max-width: 560px) {
+  .grid3, .grid4 { grid-template-columns: 1fr; }
+  #dots, .chrome-side, .kbd-hint { display: none; }
+}
+
+/* Mobile overflow safety net — content that's taller than one viewport
+   scrolls within its own slide instead of being clipped by overflow:hidden. */
+@media(max-width: 700px) {
+  .slide {
+    height: auto;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 3.2rem;
+    padding-bottom: 2rem;
+  }
+  .inner { padding-bottom: .5rem; }
+  /* Footer chrome is absolutely positioned to the slide's full scrollable
+     height, so on a scrolling slide it can overlap mid-content — hide it
+     here rather than risk overlap, same as the dots/kbd-hint already do. */
+  .chrome-foot, .chrome-page { display: none; }
+}
+
+svg { display: block; max-width: 100%; }
+.icon { width: 24px; height: 24px; stroke-width: 1.8; stroke: currentColor; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Stat Display Primitives */
+.stat-num { font-size: clamp(1.7rem, 3.6vw, 2.7rem); font-weight: 900; line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.stat-label { font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-top: .4rem; }
+.dark .stat-label { color: var(--muted-light); }
+
+/* Badges & Tags */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: .4rem .75rem;
+  border-radius: 100px;
+  border: 1px solid var(--card-border);
+}
+
+.light .badge, .warm .badge { border-color: var(--hairline); }
+.badge.purple { background: var(--purple-bg); border-color: rgba(160, 4, 223, 0.45); color: var(--purple-light); }
+.badge.gold { background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.4); color: var(--gold); }
+.badge.teal { background: rgba(45, 212, 191, 0.12); border-color: rgba(45, 212, 191, 0.4); color: var(--teal); }
+.badge.red { background: rgba(232, 64, 64, 0.12); border-color: rgba(232, 64, 64, 0.4); color: var(--neg); }
+
+/* Impact Callout Box */
+.impact {
+  display: inline-flex;
+  flex-direction: column;
+  gap: .15rem;
+  border-left: 3px solid var(--purple);
+  padding: .55rem 0 .55rem .9rem;
+  margin-top: .4rem;
+}
+.impact .k { font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.dark .impact .k { color: var(--muted-light); }
+.impact .v { font-size: clamp(1.05rem, 1.9vw, 1.48rem); font-weight: 900; color: var(--purple-light); letter-spacing: -.01em; }
+
+/* Dynamic Progress Bar Tracks */
+.bar-track { height: 10px; border-radius: 6px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
+.light .bar-track, .warm .bar-track { background: rgba(11, 11, 16, 0.07); }
+.bar-fill { height: 100%; width: 0; border-radius: 6px; background: linear-gradient(90deg, var(--purple-deep), var(--purple)); transition: width 1.2s var(--ease); }
+.slide.visible .bar-fill { width: var(--w); }
+
+/* Brand Logo Bar */
+.brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+.brand-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.airtel-badge {
+  background: #E40000;
+  color: #FFF;
+  font-weight: 900;
+  font-size: .85rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: .05em;
+}
+
+/* Logo Chips (white rounded backdrops for brand marks on dark slides) */
+.logo-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border-radius: 10px;
+  height: 34px;
+  padding: 0 .85rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+.logo-chip img {
+  height: 60%;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+.logo-chip.airtel img { height: 55%; }
