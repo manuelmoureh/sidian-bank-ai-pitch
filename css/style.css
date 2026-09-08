@@ -188,7 +188,7 @@ h1, h2, h3 { font-weight: 900; line-height: 1.04; letter-spacing: -.025em; }
 }
 
 .light .card, .warm .card {
-  background: #FFFFFF;
+  background: #FBFAFE;
   border-color: var(--hairline);
   box-shadow: 0 1px 3px rgba(11, 11, 16, 0.04);
 }
