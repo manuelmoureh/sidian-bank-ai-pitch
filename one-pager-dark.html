@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sidian Bank × Trance AI: SME Growth Engines (One-Pager)</title>
+<title>Sidian Bank × Trance AI: SME Growth Engines (One-Pager, Dark)</title>
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --ink: #0A0A0E; --paper: #FAFAFD; --paper-warm: #F4F2F9;
-    --text: #FAF9FE; --ink-text: #0B0B10; --muted: #747185; --muted-light: #9B98AE;
-    --hairline: #DCD8E8; --card-border: #E6E1F2;
-    --purple: #A004DF; --purple-deep: #5100A8; --purple-dark: #4000A7; --purple-light: #B83BF7;
-    --purple-bg: rgba(81, 0, 168, 0.08);
-    --gold: #B8791C; --gold-bg: rgba(184, 121, 28, 0.08);
+    --bg: #0A0A0E; --surface: #15121C; --surface-2: #1C1828;
+    --text: #F5F3FA; --muted: #A79FC2; --muted-dim: #7A7296;
+    --hairline: #2C2740; --card-border: #2E2842;
+    --purple: #B83BF7; --purple-soft: #8B2FD9; --purple-bright: #D48CFA;
+    --purple-bg: rgba(184, 59, 247, 0.14);
+    --gold: #EFA940; --gold-soft: rgba(239, 169, 64, 0.12);
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0; background: var(--paper-warm); color: var(--ink-text);
+    margin: 0; background: var(--bg); color: var(--text);
     font-family: 'Satoshi', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
@@ -27,60 +27,60 @@
   .brand-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
   .brand-logos { display: flex; align-items: center; gap: .9rem; }
   .brand-logos img { width: auto; }
-  .brand-logos img.sidian { height: 40px; }
+  .brand-logos img.sidian { height: 40px; background: #fff; padding: 6px 10px; border-radius: 8px; }
   .brand-logos img.trance { height: 24px; }
-  .plus { font-weight: 900; font-size: 1.05rem; color: var(--purple-deep); }
-  .badge { display: inline-flex; align-items: center; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .35rem .7rem; border-radius: 100px; border: 1px solid var(--purple-light); background: var(--purple-bg); color: var(--purple-deep); }
+  .plus { font-weight: 900; font-size: 1.05rem; color: var(--purple-bright); }
+  .badge { display: inline-flex; align-items: center; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .35rem .7rem; border-radius: 100px; border: 1px solid rgba(184,59,247,.4); background: var(--purple-bg); color: var(--purple-bright); }
   .theme-toggle { display: inline-flex; align-items: center; gap: .5rem; }
   .theme-link { font-size: .68rem; font-weight: 700; letter-spacing: .06em; color: var(--muted); text-decoration: none; border: 1px solid var(--card-border); border-radius: 100px; padding: .35rem .8rem; }
-  .theme-link:hover { color: var(--purple-deep); border-color: var(--purple-light); }
+  .theme-link:hover { color: var(--purple-bright); border-color: var(--purple); }
 
   h1.headline {
     font-size: clamp(1.8rem, 3.4vw, 2.75rem); font-weight: 900; line-height: 1.14; letter-spacing: -.02em;
-    margin: 1.4rem 0 .7rem; max-width: 26ch;
+    margin: 1.4rem 0 .7rem; max-width: 26ch; color: var(--text);
   }
-  .headline .grad { background: linear-gradient(90deg, var(--purple-dark), var(--purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .headline .grad { background: linear-gradient(90deg, var(--purple-soft), var(--purple-bright)); -webkit-background-clip: text; background-clip: text; color: transparent; }
   p.sub { font-size: clamp(.94rem, 1.15vw, 1.1rem); color: var(--muted); line-height: 1.6; max-width: 68ch; margin: 0 0 1.6rem; }
 
   /* ---- At-a-glance strip ---- */
   .glance { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--card-border); border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; margin-bottom: 1.9rem; }
-  .glance div { background: #fff; padding: 1rem .9rem; text-align: center; }
-  .glance .num { font-size: clamp(1.05rem, 1.5vw, 1.45rem); font-weight: 900; color: var(--purple-deep); letter-spacing: -.01em; }
-  .glance .lbl { font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-top: .3rem; }
-  .source-line { font-size: .68rem; color: var(--muted); font-style: italic; margin: -1.3rem 0 2.2rem; line-height: 1.5; }
-  .strip-label { font-size: .8rem; font-weight: 700; color: var(--purple-deep); margin: 0 0 .7rem; }
+  .glance div { background: var(--surface); padding: 1rem .9rem; text-align: center; }
+  .glance .num { font-size: clamp(1.05rem, 1.5vw, 1.45rem); font-weight: 900; color: var(--purple-bright); letter-spacing: -.01em; }
+  .glance .lbl { font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted-dim); margin-top: .3rem; }
+  .source-line { font-size: .68rem; color: var(--muted-dim); font-style: italic; margin: -1.3rem 0 2.2rem; line-height: 1.5; }
+  .strip-label { font-size: .8rem; font-weight: 700; color: var(--purple-bright); margin: 0 0 .7rem; }
   .bridge { font-size: .85rem; color: var(--muted); line-height: 1.5; margin: -.2rem 0 1.1rem; max-width: 60ch; }
-  .ask-note { margin: .6rem 0 0; color: #9B8FBD; font-size: .76rem; }
+  .ask-note { margin: .6rem 0 0; color: #C7B8E8; font-size: .76rem; }
 
   /* ---- Section shell ---- */
   section { margin-bottom: 2.3rem; }
-  .eyebrow { font-size: .7rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--purple-deep); margin-bottom: .55rem; }
-  h2 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 900; letter-spacing: -.015em; margin: 0 0 .7rem; max-width: 42ch; }
+  .eyebrow { font-size: .7rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--purple-bright); margin-bottom: .55rem; }
+  h2 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 900; letter-spacing: -.015em; margin: 0 0 .7rem; max-width: 42ch; color: var(--text); }
 
   /* ---- Block 2: The Number ---- */
-  .number-block { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(1.4rem, 3vw, 2.4rem); align-items: center; background: #fff; border: 1px solid var(--card-border); border-radius: 16px; padding: clamp(1.4rem, 2.6vw, 2rem); }
+  .number-block { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(1.4rem, 3vw, 2.4rem); align-items: center; background: var(--surface); border: 1px solid var(--card-border); border-radius: 16px; padding: clamp(1.4rem, 2.6vw, 2rem); }
   .number-block .stat { text-align: center; }
-  .number-block .stat .big { font-size: clamp(2.1rem, 3.6vw, 2.85rem); font-weight: 900; color: var(--purple); letter-spacing: -.02em; line-height: 1; }
+  .number-block .stat .big { font-size: clamp(2.1rem, 3.6vw, 2.85rem); font-weight: 900; color: var(--purple-bright); letter-spacing: -.02em; line-height: 1; }
   .number-block .stat .cap { font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); margin-top: .5rem; line-height: 1.4; }
   .number-block .stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .number-block p { font-size: clamp(.88rem, 1vw, .95rem); color: var(--ink-text); line-height: 1.6; margin: 0; }
+  .number-block p { font-size: clamp(.88rem, 1vw, .95rem); color: var(--text); line-height: 1.6; margin: 0; }
 
   /* ---- Block 3: Engines (flow, not cards) ---- */
   .engine-flow { display: flex; align-items: stretch; gap: clamp(1rem, 2.4vw, 2rem); }
   .engine { flex: 1; border-top: 2px solid var(--purple); padding-top: .9rem; }
-  .engine .meta { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-  .engine h3 { font-size: clamp(1.05rem, 1.4vw, 1.25rem); font-weight: 900; margin: .3rem 0 .45rem; }
+  .engine .meta { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted-dim); }
+  .engine h3 { font-size: clamp(1.05rem, 1.4vw, 1.25rem); font-weight: 900; margin: .3rem 0 .45rem; color: var(--text); }
   .engine p { font-size: .86rem; color: var(--muted); line-height: 1.5; margin: 0; max-width: 32ch; }
-  .flow-arrow { flex: none; align-self: center; color: var(--purple-light); font-size: 1.3rem; font-weight: 700; opacity: .55; margin-top: .9rem; }
+  .flow-arrow { flex: none; align-self: center; color: var(--purple-bright); font-size: 1.3rem; font-weight: 700; opacity: .6; margin-top: .9rem; }
 
   /* ---- Block 4: Impact scenarios ---- */
-  .impact-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; font-size: .85rem; }
-  .impact-table th, .impact-table td { padding: .7rem 1rem; text-align: left; border-bottom: 1px solid var(--hairline); }
-  .impact-table th { font-weight: 700; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; background: var(--paper-warm); }
+  .impact-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; font-size: .85rem; }
+  .impact-table th, .impact-table td { padding: .7rem 1rem; text-align: left; border-bottom: 1px solid var(--hairline); color: var(--text); }
+  .impact-table th { font-weight: 700; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; background: var(--surface-2); }
   .impact-table td.num, .impact-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
   .impact-table tr:last-child td { border-bottom: none; }
-  .impact-table tr.hi td { font-weight: 800; color: var(--purple-deep); }
-  .caveat { font-size: .7rem; color: var(--muted); font-style: italic; margin-top: .6rem; max-width: 78ch; }
+  .impact-table tr.hi td { font-weight: 800; color: var(--purple-bright); }
+  .caveat { font-size: .7rem; color: var(--muted-dim); font-style: italic; margin-top: .6rem; max-width: 78ch; }
 
   /* ---- Note strip ---- */
   .note-strip { display: flex; gap: clamp(1.2rem, 2.6vw, 2.4rem); flex-wrap: wrap; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 1.1rem 0; margin: 0 0 .5rem; }
@@ -88,12 +88,13 @@
   .note-strip .item b { color: var(--gold); }
 
   /* ---- Block 5: Ask ---- */
-  .ask { background: var(--ink); border-radius: 16px; padding: clamp(1.5rem, 2.6vw, 2.1rem) clamp(1.6rem, 3vw, 2.4rem); color: var(--text); display: flex; align-items: center; justify-content: space-between; gap: 1.6rem; flex-wrap: wrap; }
+  .ask { background: linear-gradient(120deg, var(--purple-soft), #5A1AA8); border-radius: 16px; padding: clamp(1.5rem, 2.6vw, 2.1rem) clamp(1.6rem, 3vw, 2.4rem); color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 1.6rem; flex-wrap: wrap; }
   .ask h2 { color: #fff; margin: 0 0 .35rem; font-size: clamp(1.15rem, 1.7vw, 1.4rem); max-width: none; }
-  .ask p { margin: 0; color: #C9C3DE; font-size: .87rem; max-width: 52ch; }
-  .ask a { flex: none; display: inline-flex; align-items: center; gap: .4rem; background: linear-gradient(90deg, var(--purple-dark), var(--purple)); color: #fff; font-weight: 800; font-size: .84rem; padding: .8rem 1.4rem; border-radius: 100px; text-decoration: none; white-space: nowrap; }
+  .ask p { margin: 0; color: #EAD9FF; font-size: .87rem; max-width: 52ch; }
+  .ask .ask-note { color: #D3B8F5; }
+  .ask a { flex: none; display: inline-flex; align-items: center; gap: .4rem; background: #fff; color: var(--purple-soft); font-weight: 800; font-size: .84rem; padding: .8rem 1.4rem; border-radius: 100px; text-decoration: none; white-space: nowrap; }
 
-  footer { text-align: center; font-size: .66rem; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; margin-top: 1.6rem; opacity: .7; }
+  footer { text-align: center; font-size: .66rem; color: var(--muted-dim); letter-spacing: .1em; text-transform: uppercase; margin-top: 1.6rem; opacity: .8; }
 
   @media (max-width: 860px) {
     .glance { grid-template-columns: repeat(3, 1fr); }
@@ -114,9 +115,11 @@
     .brand-logos img.sidian { height: 32px; }
   }
   @media print {
-    body { background: #fff; }
-    .ask { background: var(--purple-bg); color: var(--ink-text); }
-    .ask h2, .ask p { color: var(--ink-text); }
+    body { background: #fff; color: #0B0B10; }
+    .glance div, .number-block, .impact-table { background: #fff; }
+    .ask { background: #F4F2F9; color: #0B0B10; }
+    .ask h2, .ask p, .ask .ask-note { color: #0B0B10; }
+    .ask a { background: linear-gradient(90deg, #4000A7, #A004DF); color: #fff; }
   }
 </style>
 </head>
@@ -131,7 +134,7 @@
     </div>
     <div class="theme-toggle">
       <span class="badge">Confidential, One-Page Overview</span>
-      <a class="theme-link" href="one-pager-dark.html">Dark version</a>
+      <a class="theme-link" href="one-pager.html">Light version</a>
     </div>
   </div>
 
