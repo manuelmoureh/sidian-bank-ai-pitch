@@ -45,6 +45,9 @@
   .glance .num { font-size: clamp(1.05rem, 1.5vw, 1.45rem); font-weight: 900; color: var(--purple-deep); letter-spacing: -.01em; }
   .glance .lbl { font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-top: .3rem; }
   .source-line { font-size: .68rem; color: var(--muted); font-style: italic; margin: -1.3rem 0 2.2rem; line-height: 1.5; }
+  .strip-label { font-size: .8rem; font-weight: 700; color: var(--purple-deep); margin: 0 0 .7rem; }
+  .bridge { font-size: .85rem; color: var(--muted); line-height: 1.5; margin: -.2rem 0 1.1rem; max-width: 60ch; }
+  .ask-note { margin: .6rem 0 0; color: #9B8FBD; font-size: .76rem; }
 
   /* ---- Section shell ---- */
   section { margin-bottom: 2.3rem; }
@@ -77,7 +80,7 @@
   .caveat { font-size: .7rem; color: var(--muted); font-style: italic; margin-top: .6rem; max-width: 78ch; }
 
   /* ---- Note strip ---- */
-  .note-strip { display: flex; gap: clamp(1.2rem, 2.6vw, 2.4rem); flex-wrap: wrap; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 1.1rem 0; margin: 0 0 2.3rem; }
+  .note-strip { display: flex; gap: clamp(1.2rem, 2.6vw, 2.4rem); flex-wrap: wrap; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 1.1rem 0; margin: 0 0 .5rem; }
   .note-strip .item { flex: 1; min-width: 240px; font-size: .82rem; color: var(--muted); line-height: 1.5; }
   .note-strip .item b { color: var(--gold); }
 
@@ -129,6 +132,7 @@
   <h1 class="headline">Grow Sidian's Share of Kenya's SME Market. <span class="grad">No New Branch, No New Headcount.</span></h1>
   <p class="sub">Three AI engines that find SME customers, answer them in minutes on WhatsApp and phone, and keep them from drifting to Equity or KCB. Trance AI builds them as Acquire, Serve, and Retain: sales, marketing, and customer service, running 24/7.</p>
 
+  <p class="strip-label">Sidian Bank at a glance, FY2025</p>
   <div class="glance">
     <div><div class="num">KES 90.8B</div><div class="lbl">Total Assets</div></div>
     <div><div class="num">KES 72.3B</div><div class="lbl">Deposits</div></div>
@@ -177,10 +181,12 @@
     <div class="item"><b>Why now.</b> Absa already runs a live WhatsApp banking assistant, and Equity is 98% digital. Every quarter without this, the gap widens.</div>
     <div class="item"><b>Built for a regulated bank.</b> Every AI conversation is logged and reviewable, and a human can step in at any time. No core banking changes, no new capex.</div>
   </div>
+  <p class="source-line" style="margin-top:0; margin-bottom:2.3rem;">Sources: Absa Kenya and Equity Group public disclosures, 2025.</p>
 
   <section>
     <div class="eyebrow">What It Could Be Worth</div>
     <h2>Illustrative SME Market-Share Scenarios</h2>
+    <p class="bridge">SME lending is one of the real, reportable levers inside that CBK weighted share, and the fastest one to move without touching deposits or capital directly.</p>
     <div style="overflow-x:auto;">
     <table class="impact-table">
       <thead>
@@ -200,6 +206,7 @@
     <div>
       <h2>Proposed Next Step</h2>
       <p>A 30-minute working session with your SME and digital banking leads to scope one pilot branch cluster. Engines live within 15 to 20 days of sign-off.</p>
+      <p class="ask-note">Commercial terms and the full engine analysis are shared in that session.</p>
     </div>
     <a href="mailto:contact@trance.ai">Schedule the Session →</a>
   </div>
