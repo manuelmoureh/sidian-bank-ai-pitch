@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sidian Bank × Trance AI — The SME Growth Engines (One-Pager)</title>
+<title>Sidian Bank × Trance AI: SME Growth Engines (One-Pager)</title>
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
 <style>
@@ -13,7 +13,7 @@
     --hairline: #DCD8E8; --card-border: #E6E1F2;
     --purple: #A004DF; --purple-deep: #5100A8; --purple-dark: #4000A7; --purple-light: #B83BF7;
     --purple-bg: rgba(81, 0, 168, 0.08);
-    --gold: #F59E0B; --teal: #2DD4BF; --neg: #E84040; --success: #10B981;
+    --gold: #B8791C; --gold-bg: rgba(184, 121, 28, 0.08);
   }
   * { box-sizing: border-box; }
   body {
@@ -21,100 +21,94 @@
     font-family: 'Satoshi', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
-  body::before {
-    content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    background-image: linear-gradient(rgba(80,0,168,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(80,0,168,0.035) 1px, transparent 1px);
-    background-size: 44px 44px;
-  }
-  .page { max-width: 980px; margin: 0 auto; padding: clamp(1.4rem,4vw,3rem); position: relative; z-index: 1; }
+  .page { max-width: 1180px; margin: 0 auto; padding: clamp(1.4rem, 3.5vw, 3.2rem); }
 
   /* ---- Header ---- */
   .brand-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
   .brand-logos { display: flex; align-items: center; gap: .9rem; }
-  .brand-logos img { height: 26px; width: auto; }
+  .brand-logos img { width: auto; }
   .brand-logos img.sidian { height: 40px; }
   .brand-logos img.trance { height: 24px; }
   .plus { font-weight: 900; font-size: 1.05rem; color: var(--purple-deep); }
-  .badge { display: inline-flex; align-items: center; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .35rem .7rem; border-radius: 100px; border: 1px solid var(--purple-light); background: var(--purple-bg); color: var(--purple-deep); }
+  .badge { display: inline-flex; align-items: center; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .35rem .7rem; border-radius: 100px; border: 1px solid var(--purple-light); background: var(--purple-bg); color: var(--purple-deep); }
 
   h1.headline {
-    font-size: clamp(1.7rem, 3.3vw, 2.5rem); font-weight: 900; line-height: 1.12; letter-spacing: -.02em;
-    margin: 1.3rem 0 .6rem; max-width: 24ch;
+    font-size: clamp(1.8rem, 3.4vw, 2.75rem); font-weight: 900; line-height: 1.14; letter-spacing: -.02em;
+    margin: 1.4rem 0 .7rem; max-width: 26ch;
   }
-  .headline .grad { background: linear-gradient(90deg, var(--purple-dark), var(--purple), #F472B6); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  p.sub { font-size: clamp(.92rem, 1.15vw, 1.05rem); color: var(--muted); line-height: 1.55; max-width: 62ch; margin: 0 0 1.4rem; }
+  .headline .grad { background: linear-gradient(90deg, var(--purple-dark), var(--purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  p.sub { font-size: clamp(.94rem, 1.15vw, 1.1rem); color: var(--muted); line-height: 1.6; max-width: 68ch; margin: 0 0 1.6rem; }
 
   /* ---- At-a-glance strip ---- */
-  .glance { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--card-border); border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; margin-bottom: 2rem; }
-  .glance div { background: #fff; padding: .9rem .8rem; text-align: center; }
-  .glance .num { font-size: clamp(1rem, 1.6vw, 1.3rem); font-weight: 900; color: var(--purple-deep); letter-spacing: -.01em; }
-  .glance .lbl { font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-top: .25rem; }
+  .glance { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--card-border); border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; margin-bottom: 1.9rem; }
+  .glance div { background: #fff; padding: 1rem .9rem; text-align: center; }
+  .glance .num { font-size: clamp(1.05rem, 1.5vw, 1.45rem); font-weight: 900; color: var(--purple-deep); letter-spacing: -.01em; }
+  .glance .lbl { font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-top: .3rem; }
+  .source-line { font-size: .68rem; color: var(--muted); font-style: italic; margin: -1.3rem 0 2.2rem; line-height: 1.5; }
 
   /* ---- Section shell ---- */
-  section { margin-bottom: 2.1rem; }
-  .eyebrow { font-size: .68rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--purple-deep); display: flex; align-items: center; gap: .5rem; margin-bottom: .5rem; }
-  .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--purple); }
-  h2 { font-size: clamp(1.15rem, 1.9vw, 1.5rem); font-weight: 900; letter-spacing: -.015em; margin: 0 0 .6rem; }
+  section { margin-bottom: 2.3rem; }
+  .eyebrow { font-size: .7rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--purple-deep); margin-bottom: .55rem; }
+  h2 { font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 900; letter-spacing: -.015em; margin: 0 0 .7rem; max-width: 42ch; }
 
   /* ---- Block 2: The Number ---- */
-  .number-block { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.4rem; align-items: center; background: #fff; border: 1px solid var(--card-border); border-radius: 16px; padding: 1.5rem; }
+  .number-block { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(1.4rem, 3vw, 2.4rem); align-items: center; background: #fff; border: 1px solid var(--card-border); border-radius: 16px; padding: clamp(1.4rem, 2.6vw, 2rem); }
   .number-block .stat { text-align: center; }
-  .number-block .stat .big { font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 900; color: var(--purple); letter-spacing: -.02em; line-height: 1; }
-  .number-block .stat .cap { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-top: .45rem; }
-  .number-block .stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
-  .number-block p { font-size: .88rem; color: var(--ink-text); line-height: 1.55; margin: 0; }
+  .number-block .stat .big { font-size: clamp(2.1rem, 3.6vw, 2.85rem); font-weight: 900; color: var(--purple); letter-spacing: -.02em; line-height: 1; }
+  .number-block .stat .cap { font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); margin-top: .5rem; line-height: 1.4; }
+  .number-block .stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .number-block p { font-size: clamp(.88rem, 1vw, .95rem); color: var(--ink-text); line-height: 1.6; margin: 0; }
 
-  /* ---- Block 3: Engines ---- */
-  .engines { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; }
-  .engine-card { background: #fff; border: 1px solid var(--card-border); border-radius: 12px; padding: 1rem 1.1rem; border-top: 3px solid var(--purple); }
-  .engine-card.serve { border-top-color: var(--teal); }
-  .engine-card.retain { border-top-color: var(--gold); }
-  .engine-card .tag { font-size: .66rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
-  .engine-card h3 { font-size: 1.05rem; font-weight: 900; margin: .3rem 0 .4rem; }
-  .engine-card p { font-size: .82rem; color: var(--muted); line-height: 1.45; margin: 0; }
+  /* ---- Block 3: Engines (flow, not cards) ---- */
+  .engine-flow { display: flex; align-items: stretch; gap: clamp(1rem, 2.4vw, 2rem); }
+  .engine { flex: 1; border-top: 2px solid var(--purple); padding-top: .9rem; }
+  .engine .meta { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+  .engine h3 { font-size: clamp(1.05rem, 1.4vw, 1.25rem); font-weight: 900; margin: .3rem 0 .45rem; }
+  .engine p { font-size: .86rem; color: var(--muted); line-height: 1.5; margin: 0; max-width: 32ch; }
+  .flow-arrow { flex: none; align-self: center; color: var(--purple-light); font-size: 1.3rem; font-weight: 700; opacity: .55; margin-top: .9rem; }
 
   /* ---- Block 4: Impact scenarios ---- */
   .impact-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; font-size: .85rem; }
-  .impact-table th, .impact-table td { padding: .65rem .9rem; text-align: left; border-bottom: 1px solid var(--hairline); }
+  .impact-table th, .impact-table td { padding: .7rem 1rem; text-align: left; border-bottom: 1px solid var(--hairline); }
   .impact-table th { font-weight: 700; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; background: var(--paper-warm); }
   .impact-table td.num, .impact-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
   .impact-table tr:last-child td { border-bottom: none; }
   .impact-table tr.hi td { font-weight: 800; color: var(--purple-deep); }
-  .caveat { font-size: .68rem; color: var(--muted); font-style: italic; margin-top: .5rem; }
+  .caveat { font-size: .7rem; color: var(--muted); font-style: italic; margin-top: .6rem; max-width: 78ch; }
+
+  /* ---- Note strip ---- */
+  .note-strip { display: flex; gap: clamp(1.2rem, 2.6vw, 2.4rem); flex-wrap: wrap; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 1.1rem 0; margin: 0 0 2.3rem; }
+  .note-strip .item { flex: 1; min-width: 240px; font-size: .82rem; color: var(--muted); line-height: 1.5; }
+  .note-strip .item b { color: var(--gold); }
 
   /* ---- Block 5: Ask ---- */
-  .ask { background: var(--ink); border-radius: 16px; padding: 1.6rem 1.8rem; color: var(--text); display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; flex-wrap: wrap; }
-  .ask h2 { color: #fff; margin: 0 0 .3rem; font-size: clamp(1.1rem, 1.8vw, 1.35rem); }
-  .ask p { margin: 0; color: #C9C3DE; font-size: .85rem; }
-  .ask a { flex: none; display: inline-flex; align-items: center; gap: .4rem; background: linear-gradient(90deg, var(--purple-dark), var(--purple)); color: #fff; font-weight: 800; font-size: .82rem; padding: .75rem 1.3rem; border-radius: 100px; text-decoration: none; white-space: nowrap; }
+  .ask { background: var(--ink); border-radius: 16px; padding: clamp(1.5rem, 2.6vw, 2.1rem) clamp(1.6rem, 3vw, 2.4rem); color: var(--text); display: flex; align-items: center; justify-content: space-between; gap: 1.6rem; flex-wrap: wrap; }
+  .ask h2 { color: #fff; margin: 0 0 .35rem; font-size: clamp(1.15rem, 1.7vw, 1.4rem); max-width: none; }
+  .ask p { margin: 0; color: #C9C3DE; font-size: .87rem; max-width: 52ch; }
+  .ask a { flex: none; display: inline-flex; align-items: center; gap: .4rem; background: linear-gradient(90deg, var(--purple-dark), var(--purple)); color: #fff; font-weight: 800; font-size: .84rem; padding: .8rem 1.4rem; border-radius: 100px; text-decoration: none; white-space: nowrap; }
 
-  .note-strip { display: flex; gap: 1.4rem; flex-wrap: wrap; background: #fff; border: 1px solid var(--card-border); border-left: 3px solid var(--neg); border-radius: 10px; padding: .8rem 1.1rem; margin-top: .9rem; }
-  .note-strip .item { flex: 1; min-width: 220px; font-size: .78rem; color: var(--muted); line-height: 1.45; }
-  .note-strip .item b { color: var(--ink-text); }
-  .source-line { font-size: .66rem; color: var(--muted); font-style: italic; margin-top: .6rem; margin-bottom: 1.6rem; line-height: 1.5; }
+  footer { text-align: center; font-size: .66rem; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; margin-top: 1.6rem; opacity: .7; }
 
-  footer { text-align: center; font-size: .66rem; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; margin-top: 1.8rem; opacity: .7; }
-
-  @media (max-width: 420px) {
-    .page { padding: 1.1rem; }
-    .brand-logos img.sidian { height: 32px; }
-    .impact-table th, .impact-table td { padding: .5rem .6rem; font-size: .78rem; }
-    .number-block { padding: 1rem; }
-    .number-block .stats-row { grid-template-columns: 1fr; gap: .6rem; }
-    .number-block .stat .big { font-size: 1.8rem; }
-    .note-strip { flex-direction: column; gap: .7rem; }
-    .note-strip .item { min-width: 0; }
-  }
-  @media (max-width: 760px) {
-    .glance { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 860px) {
+    .glance { grid-template-columns: repeat(3, 1fr); }
     .number-block { grid-template-columns: 1fr; }
-    .number-block .stats-row { grid-template-columns: 1fr 1fr; }
-    .engines { grid-template-columns: 1fr; }
-    .ask { flex-direction: column; align-items: flex-start; }
+    .engine-flow { flex-direction: column; }
+    .flow-arrow { display: none; }
+  }
+  @media (max-width: 540px) {
+    .page { padding: 1.15rem; }
+    .glance { grid-template-columns: repeat(2, 1fr); }
+    .source-line { margin-top: .5rem; margin-bottom: 1.9rem; }
+    .number-block { padding: 1.1rem; }
+    .number-block .stats-row { grid-template-columns: 1fr; gap: .7rem; }
+    .number-block .stat .big { font-size: 1.9rem; }
+    .impact-table th, .impact-table td { padding: .55rem .65rem; font-size: .78rem; }
+    .note-strip { flex-direction: column; gap: .9rem; }
+    .note-strip .item { min-width: 0; }
+    .brand-logos img.sidian { height: 32px; }
   }
   @media print {
     body { background: #fff; }
-    body::before { display: none; }
     .ask { background: var(--purple-bg); color: var(--ink-text); }
     .ask h2, .ask p { color: var(--ink-text); }
   }
@@ -129,11 +123,11 @@
       <span class="plus">+</span>
       <img class="trance" src="assets/trance-ai-logo.png" alt="Trance AI" />
     </div>
-    <span class="badge">Confidential — One-Page Overview</span>
+    <span class="badge">Confidential, One-Page Overview</span>
   </div>
 
-  <h1 class="headline">Grow Sidian's Share of Kenya's SME Market — <span class="grad">Without Opening a Branch or Hiring More Staff.</span></h1>
-  <p class="sub">Three AI engines that find SME customers, answer them in minutes on WhatsApp and phone, and keep them from drifting to Equity or KCB. Trance AI builds them as Acquire, Serve, and Retain — sales, marketing, and customer service, running 24/7.</p>
+  <h1 class="headline">Grow Sidian's Share of Kenya's SME Market. <span class="grad">No New Branch, No New Headcount.</span></h1>
+  <p class="sub">Three AI engines that find SME customers, answer them in minutes on WhatsApp and phone, and keep them from drifting to Equity or KCB. Trance AI builds them as Acquire, Serve, and Retain: sales, marketing, and customer service, running 24/7.</p>
 
   <div class="glance">
     <div><div class="num">KES 90.8B</div><div class="lbl">Total Assets</div></div>
@@ -142,36 +136,37 @@
     <div><div class="num">50</div><div class="lbl">Branches</div></div>
     <div><div class="num">KES 1.73B</div><div class="lbl">FY2025 Net Profit</div></div>
   </div>
-  <p class="source-line">Source: Sidian Bank audited Annual Report and Financial Statements, year ended 31 Dec 2025.</p>
+  <p class="source-line">Source: Sidian Bank audited Annual Report and Financial Statements, year ended 31 December 2025.</p>
 
   <section>
-    <div class="eyebrow"><span class="dot"></span>The One Number</div>
-    <h2>Sidian Just Crossed CBK's Threshold Into Tier 2. The Engines Are Built to Keep It Climbing.</h2>
+    <div class="eyebrow">The One Number</div>
+    <h2>Sidian Just Crossed CBK's Threshold Into Tier 2. The Engines Keep It Climbing.</h2>
     <div class="number-block">
       <div class="stats-row">
-        <div class="stat"><div class="big">0.7%→1%+</div><div class="cap">CBK Weighted Market Share<br>Dec 2024 → Sept 2025</div></div>
+        <div class="stat"><div class="big">0.7%→1%+</div><div class="cap">CBK Weighted Market Share<br>Dec 2024 to Sept 2025</div></div>
         <div class="stat"><div class="big">~4.6%</div><div class="cap">Share of Kenya's KES 596.8B<br>SME Credit Market</div></div>
       </div>
-      <p>In September 2025, Sidian's own regulator confirmed it: crossing 1% weighted market share (a blend of assets, deposits, and capital) earned Sidian promotion into CBK's Tier 2 band, which runs 1%–5%. Its SME lending already punches well above that overall weight — the segment worth feeding hardest to keep climbing.</p>
+      <p>In September 2025, Sidian's own regulator confirmed it. Crossing 1% weighted market share, a blend of assets, deposits, and capital, earned Sidian promotion into CBK's Tier 2 band, which runs 1% to 5%. Its SME lending already punches well above that overall weight, the segment worth feeding hardest to keep climbing.</p>
     </div>
   </section>
 
   <section>
-    <div class="eyebrow"><span class="dot"></span>Three Engines</div>
-    <h2>Sales, Marketing, and Customer Service — Not a Bigger Branch Network</h2>
-    <div class="engines">
-      <div class="engine-card">
-        <span class="tag">Engine 1 — Sales &amp; Marketing</span>
+    <h2>Sales, Marketing, and Customer Service. Not a Bigger Branch Network.</h2>
+    <div class="engine-flow">
+      <div class="engine">
+        <span class="meta">Sales &amp; Marketing</span>
         <h3>Acquire</h3>
-        <p>Finds and pre-qualifies SME leads on WhatsApp, web, and social — 24/7.</p>
+        <p>Finds and pre-qualifies SME leads on WhatsApp, web, and social, 24/7.</p>
       </div>
-      <div class="engine-card serve">
-        <span class="tag">Engine 2 — Customer Service</span>
+      <span class="flow-arrow">→</span>
+      <div class="engine">
+        <span class="meta">Customer Service</span>
         <h3>Serve</h3>
         <p>Answers balance, transfer, and loan-status questions instantly on WhatsApp and phone.</p>
       </div>
-      <div class="engine-card retain">
-        <span class="tag">Engine 3 — Loyalty</span>
+      <span class="flow-arrow">→</span>
+      <div class="engine">
+        <span class="meta">Loyalty</span>
         <h3>Retain</h3>
         <p>Flags at-risk accounts and cross-sell moments before a customer leaves.</p>
       </div>
@@ -179,12 +174,12 @@
   </section>
 
   <div class="note-strip">
-    <div class="item"><b>Why now.</b> Absa already runs a live WhatsApp banking assistant; Equity is 98% digital. Every quarter without this, the gap widens.</div>
+    <div class="item"><b>Why now.</b> Absa already runs a live WhatsApp banking assistant, and Equity is 98% digital. Every quarter without this, the gap widens.</div>
     <div class="item"><b>Built for a regulated bank.</b> Every AI conversation is logged and reviewable, and a human can step in at any time. No core banking changes, no new capex.</div>
   </div>
 
   <section>
-    <div class="eyebrow"><span class="dot"></span>What It Could Be Worth</div>
+    <div class="eyebrow">What It Could Be Worth</div>
     <h2>Illustrative SME Market-Share Scenarios</h2>
     <div style="overflow-x:auto;">
     <table class="impact-table">
@@ -204,12 +199,12 @@
   <div class="ask">
     <div>
       <h2>Proposed Next Step</h2>
-      <p>A 30-minute working session with your SME and digital banking leads to scope one pilot branch cluster. Engines live within 15–20 days of sign-off.</p>
+      <p>A 30-minute working session with your SME and digital banking leads to scope one pilot branch cluster. Engines live within 15 to 20 days of sign-off.</p>
     </div>
     <a href="mailto:contact@trance.ai">Schedule the Session →</a>
   </div>
 
-  <footer>Sidian Bank × Trance AI — Confidential</footer>
+  <footer>Sidian Bank × Trance AI</footer>
 
 </div>
 </body>
