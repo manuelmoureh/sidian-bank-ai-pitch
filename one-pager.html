@@ -32,6 +32,8 @@
   .brand-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
   .brand-logos { display: flex; align-items: center; gap: .9rem; }
   .brand-logos img { height: 26px; width: auto; }
+  .brand-logos img.sidian { height: 40px; }
+  .brand-logos img.trance { height: 24px; }
   .plus { font-weight: 900; font-size: 1.05rem; color: var(--purple-deep); }
   .badge { display: inline-flex; align-items: center; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .35rem .7rem; border-radius: 100px; border: 1px solid var(--purple-light); background: var(--purple-bg); color: var(--purple-deep); }
 
@@ -86,8 +88,23 @@
   .ask p { margin: 0; color: #C9C3DE; font-size: .85rem; }
   .ask a { flex: none; display: inline-flex; align-items: center; gap: .4rem; background: linear-gradient(90deg, var(--purple-dark), var(--purple)); color: #fff; font-weight: 800; font-size: .82rem; padding: .75rem 1.3rem; border-radius: 100px; text-decoration: none; white-space: nowrap; }
 
+  .note-strip { display: flex; gap: 1.4rem; flex-wrap: wrap; background: #fff; border: 1px solid var(--card-border); border-left: 3px solid var(--neg); border-radius: 10px; padding: .8rem 1.1rem; margin-top: .9rem; }
+  .note-strip .item { flex: 1; min-width: 220px; font-size: .78rem; color: var(--muted); line-height: 1.45; }
+  .note-strip .item b { color: var(--ink-text); }
+  .source-line { font-size: .66rem; color: var(--muted); font-style: italic; margin-top: .6rem; margin-bottom: 1.6rem; line-height: 1.5; }
+
   footer { text-align: center; font-size: .66rem; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; margin-top: 1.8rem; opacity: .7; }
 
+  @media (max-width: 420px) {
+    .page { padding: 1.1rem; }
+    .brand-logos img.sidian { height: 32px; }
+    .impact-table th, .impact-table td { padding: .5rem .6rem; font-size: .78rem; }
+    .number-block { padding: 1rem; }
+    .number-block .stats-row { grid-template-columns: 1fr; gap: .6rem; }
+    .number-block .stat .big { font-size: 1.8rem; }
+    .note-strip { flex-direction: column; gap: .7rem; }
+    .note-strip .item { min-width: 0; }
+  }
   @media (max-width: 760px) {
     .glance { grid-template-columns: repeat(2, 1fr); }
     .number-block { grid-template-columns: 1fr; }
@@ -108,9 +125,9 @@
 
   <div class="brand-row">
     <div class="brand-logos">
-      <img src="assets/Sidian-bank-Logo-1.png" alt="Sidian Bank" />
+      <img class="sidian" src="assets/Sidian-bank-Logo-1.png" alt="Sidian Bank" />
       <span class="plus">+</span>
-      <img src="assets/trance-ai-logo.png" alt="Trance AI" />
+      <img class="trance" src="assets/trance-ai-logo.png" alt="Trance AI" />
     </div>
     <span class="badge">Confidential — One-Page Overview</span>
   </div>
@@ -125,6 +142,7 @@
     <div><div class="num">50</div><div class="lbl">Branches</div></div>
     <div><div class="num">KES 1.73B</div><div class="lbl">FY2025 Net Profit</div></div>
   </div>
+  <p class="source-line">Source: Sidian Bank audited Annual Report and Financial Statements, year ended 31 Dec 2025.</p>
 
   <section>
     <div class="eyebrow"><span class="dot"></span>The One Number</div>
@@ -160,9 +178,15 @@
     </div>
   </section>
 
+  <div class="note-strip">
+    <div class="item"><b>Why now.</b> Absa already runs a live WhatsApp banking assistant; Equity is 98% digital. Every quarter without this, the gap widens.</div>
+    <div class="item"><b>Built for a regulated bank.</b> Every AI conversation is logged and reviewable, and a human can step in at any time. No core banking changes, no new capex.</div>
+  </div>
+
   <section>
     <div class="eyebrow"><span class="dot"></span>What It Could Be Worth</div>
     <h2>Illustrative SME Market-Share Scenarios</h2>
+    <div style="overflow-x:auto;">
     <table class="impact-table">
       <thead>
         <tr><th>SME Credit Market Share</th><th class="num">Implied Loan Book</th><th class="num">Vs. Today (KES 27.5B)</th></tr>
@@ -173,15 +197,16 @@
         <tr class="hi"><td>7.0%</td><td class="num">KES 41.8B</td><td class="num">+KES 14.3B</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="caveat">Illustrative scenarios, not a forecast. Based on Kenya's KES 596.8B national MSME credit market (Kenya Bankers Association, Dec 2025) and Sidian's audited FY2025 loan book of KES 27.5B. Actual movement depends on Sidian's real account and lending data, confirmed jointly during a pilot.</p>
   </section>
 
   <div class="ask">
     <div>
-      <h2>Ready to See It Live?</h2>
-      <p>Three engines. Zero extra headcount. Live in weeks, not quarters.</p>
+      <h2>Proposed Next Step</h2>
+      <p>A 30-minute working session with your SME and digital banking leads to scope one pilot branch cluster. Engines live within 15–20 days of sign-off.</p>
     </div>
-    <a href="mailto:contact@trance.ai">Initiate Partnership →</a>
+    <a href="mailto:contact@trance.ai">Schedule the Session →</a>
   </div>
 
   <footer>Sidian Bank × Trance AI — Confidential</footer>
